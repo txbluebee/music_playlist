@@ -1,5 +1,5 @@
 class Song
-
+  attr_accessor(:artist, :song, :genre, :id)
   @@songs = []
 
   def initialize(artist, song, genre)
@@ -7,22 +7,6 @@ class Song
     @song = song
     @genre = genre
     @id = @@songs.length() + 1
-  end
-
-  def artist
-    @artist
-  end
-
-  def song
-    @song
-  end
-
-  def genre
-    @genre
-  end
-
-  def id
-    @id
   end
 
   def self.all
@@ -44,6 +28,6 @@ class Song
         found_song = song
       end
     end
-    found_song  
+    found_song
   end
 end
