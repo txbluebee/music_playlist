@@ -1,6 +1,6 @@
-<h1><%= @playlist.name() %></h1>
+<h1><%= @playlist.name().upcase() %></h1>
 
-<div class="container">
+<div class="container playlist">
   <ul>
     <% @songs.each() do |song| %>
     <li>Artist: <%= song.artist() %>, Song: <%= song.song() %>, Genre: <%= song.genre() %></li>
@@ -8,6 +8,8 @@
   </ul>
 </div>
 
-<div class='container'>
-  <a href='/playlist/<%= @playlist.id() %>/songs/new'>Add New Song</a>
+
+  <a class="btn btn-outline-danger" role="button" href='/playlist/<%= @playlist.id() %>/songs/new'>Add New Song</a>
+
+  <button type="button" name="button" class="clickme">Hello</button>
 </div>
