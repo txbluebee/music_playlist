@@ -13,15 +13,12 @@ get('/playlists') do
   erb(:show_playlists)
 end
 
-get('/add_playlist') do
-  erb(:add_new_playlist)
-end
-
 post('/playlist_form') do
   playlist_name = params.fetch('playlist')
   @playlist = Playlist.new(playlist_name)
   @playlist.save()
-  erb(:success)
+  @playlists = Playlist.all()
+  erb(:show_playlists)
 end
 
 get('/playlist/:id') do
@@ -45,5 +42,6 @@ post('/song_form') do
   @new_song.save()
   @playlist = Playlist.find(params.fetch('playlist_id').to_i())
   @playlist.add_song(@new_song)
-  erb(:success)
+  @songs = @playlist.songs()
+  erb(:playlist)
 end

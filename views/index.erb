@@ -1,5 +1,7 @@
-<h1>My Music</h1>
-
-<a href='/playlists'>See all your playlists</a>
-<br>
-<a href='/add_playlist'>Add a new playlist</a>
+<form action='/playlist_form' method='post'>
+  <div class='form-group'>
+    <label for="playlist">Playlist Name:</label>
+    <input type="text" name="playlist" id="playlist" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-outline-primary" name="submit">Add Playlist</button>
+</form>
