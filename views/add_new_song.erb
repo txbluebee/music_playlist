@@ -1,0 +1,26 @@
+<h1>Add a new song to <%= @playlist.name() %> playlist:</h1>
+
+<div class="container">
+  <form action='/song_form' method='post'>
+    <input id='playlist_id' name='playlist_id' type='hidden' value='<%= @playlist.id() %>'>
+    <div class='form-group'>
+      <label for="artist">Artist:</label>
+      <input type="text" name="artist" id="artist" class="form-control">
+    </div>
+    <div class='form-group'>
+      <label for="song">Song:</label>
+      <input type="text" name="song" id="song" class="form-control">
+    </div>
+    <div class='form-group'>
+      <p>Genre:</p>
+      <select name='genre'>
+        <option>Hip-Hop</option>
+        <option>Pop</option>
+        <option>Country</option>
+        <option>Jazz</option>
+        <option>Rock</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success" name="submit">Add Song</button>
+  </form>
+</div>
