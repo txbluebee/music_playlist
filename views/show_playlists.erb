@@ -1,0 +1,7 @@
+<h1>Here are your playlists:</h1>
+
+<ul>
+  <% @playlists.each() do |playlist| %>
+  <li><a href="/playlist/<%= playlist.id() %>"><%= playlist.name() %></a></li>
+  <% end %>
+</ul>
